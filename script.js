@@ -20,15 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor.style.top = e.clientY + 'px';
     });
 
-    const links = document.querySelectorAll('a, button, .service-card');
+    const links = document.querySelectorAll('a, button, .service-card, .faq-header');
     links.forEach(link => {
-        link.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-        link.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        link.addEventListener('mouseenter', () => {
+            if (link.classList.contains('service-card') || link.tagName === 'BUTTON') {
+                document.body.classList.add('cursor-expand');
+            } else {
+                document.body.classList.add('cursor-hover');
+            }
+        });
+        link.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor-hover');
+            document.body.classList.remove('cursor-expand');
+        });
+    });
+
+    const textElements = document.querySelectorAll('h1, h2, h3, .blog-intro');
+    textElements.forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-text'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-text'));
     });
 
     // Reveal on Scroll Animation
     const observerOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
@@ -36,16 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Once visible, we can stop observing this specific element
+                // For blog detail content, we might want to keep observing if they re-enter?
+                // But usually once is fine for performance.
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Apply animation to elements with specific classes
-    document.querySelectorAll('.reveal-on-scroll, .reveal-up').forEach(el => {
+    document.querySelectorAll('.reveal-on-scroll, .reveal-up, .blog-content h2, .blog-content h3, .blog-content p, .blog-content img').forEach(el => {
         observer.observe(el);
     });
+
 
     // Header Blur on Scroll
     const header = document.querySelector('header');
