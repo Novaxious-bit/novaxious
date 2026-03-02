@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Fixology Home Renovation</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: white;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="custom-cursor"></div>
+    <header>
+        <div class="logo">
+            <div class="logo-text">
+                <span class="fix-part">F<i class="fas fa-screwdriver"></i><i class="fas fa-tools"></i></span><span
+                    class="ology-part"><i class="fas fa-cog fa-spin-slow"></i><i class="fas fa-ruler-combined"></i><i
+                        class="fas fa-cog fa-spin-slow"></i>G<i class="fas fa-screwdriver-wrench"></i></span>
+            </div>
+            <div class="tagline">Home Renovation</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px;">Book Now</a>
+    </header>
+
+    <main>
+        <section class="hero"
+            style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80');">
+            <h1 class="reveal-up">Contact Fixology</h1>
+            <p class="reveal-up delay-1">Let's Discuss Your Luxury Renovation Project</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="services-grid">
+                <div class="contact-info reveal-up">
+                    <h3>Get In Touch</h3>
+                    <p style="margin: 20px 0; color: var(--text-muted);">Reach out to our experts for a personalized
+                        consultation.</p>
+                    <p><i class="fas fa-phone" style="width: 25px; color: var(--primary-red);"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope" style="width: 25px; color: var(--primary-red);"></i>
+                        info@fixologyrenovation.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="width: 25px; color: var(--primary-red);"></i> 123 Modern
+                        Street, Suite 101</p>
+                    <div style="margin-top: 30px;">
+                        <h4>Business Hours</h4>
+                        <p>Mon – Sat: 9AM – 6PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+                <div class="contact-form reveal-up delay-1">
+                    <form>
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="Phone Number">
+                        <textarea rows="5" placeholder="Your Message / Project Details" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0; height: 400px; line-height: 0;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188764.12066861617!2d-83.08502575!3d42.2858632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2ac1b54f886b%3A0x463255153283f6!2sWindsor%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sca!4v1708942000000!5m2!1sen!2sca"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fixology Home Renovation. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
