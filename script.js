@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Before/After Slider Logic
-    const sliders = document.querySelectorAll('.comparison-slider');
+    const sliders = document.querySelectorAll('.comparison-slider, .hero-comparison-slider');
     sliders.forEach(slider => {
         const handle = slider.querySelector('.slider-handle');
         const imageAfter = slider.querySelector('.image-after');
