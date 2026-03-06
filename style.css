@@ -26,31 +26,21 @@ html {
 }
 
 /* --- Hero Slider --- */
-/* --- Hero Comparison Slider --- */
-.hero-slider-section {
+.hero {
     position: relative;
-    height: 100vh;
-    width: 100%;
     overflow: hidden;
-    padding: 0;
 }
 
-.hero-comparison-slider {
-    position: relative;
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    z-index: -1;
 }
 
-.hero-comparison-slider .image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.hero-comparison-slider .image-before,
-.hero-comparison-slider .image-after {
+.slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -58,115 +48,23 @@ html {
     height: 100%;
     background-size: cover;
     background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.hero-comparison-slider .image-after {
-    clip-path: inset(0 0 0 50%);
+.slide.active {
+    opacity: 1;
 }
 
-.hero-comparison-slider .slider-handle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background: white;
-    transform: translateX(-50%);
-    cursor: ew-resize;
-    z-index: 10;
-}
-
-.hero-comparison-slider .slider-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background: var(--primary-red);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
-    transition: var(--transition);
-}
-
-.hero-comparison-slider .slider-button::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 2px solid var(--primary-red);
-    border-radius: 50%;
-    animation: pulse-border 2s infinite;
-}
-
-@keyframes pulse-border {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
-
-.hero-comparison-slider .slider-label {
-    position: absolute;
-    bottom: 40px;
-    padding: 12px 25px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    z-index: 5;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(5px);
-    pointer-events: none;
-}
-
-.hero-comparison-slider .label-before {
-    left: 40px;
-    border-left: 4px solid var(--primary-blue);
-}
-
-.hero-comparison-slider .label-after {
-    right: 40px;
-    border-right: 4px solid var(--primary-red);
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 15;
-    width: 80%;
-    pointer-events: none;
-}
-
-.hero-content .reveal-up,
-.hero-content .cta-group {
-    pointer-events: auto;
-}
-
-.hero-comparison-slider::after {
+.hero::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 .portfolio,
@@ -712,40 +610,21 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
     margin-bottom: 50px;
 }
 
 .footer-section h4 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-size: 1.1rem;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    border-left: 3px solid var(--primary-red);
-    padding-left: 15px;
 }
 
 .footer-section p,
-.footer-section li,
-.footer-section a {
+.footer-section li {
     color: var(--text-muted);
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-    display: block;
-    transition: var(--transition);
-}
-
-.footer-section a:hover {
-    color: var(--primary-red);
-    transform: translateX(5px);
-}
-
-.footer-section i {
-    color: var(--primary-blue);
-    margin-right: 10px;
-    width: 20px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 .footer-bottom {
@@ -753,12 +632,7 @@ footer {
     padding-top: 40px;
     border-top: 1px solid var(--glass-border);
     color: var(--text-muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-.footer-section .logo {
-    margin-bottom: 20px;
+    font-size: 0.8rem;
 }
 
 /* --- Reveal Animations --- */
